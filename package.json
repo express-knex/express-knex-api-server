@@ -1,0 +1,12 @@
+{
+  "name": "express-knex-server",
+  "version": "0.0.1",
+  "description": "Server plug-in to enable Knex-based CRUD routes, auth and more",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "deksden",
+  "license": "MIT"
+}
