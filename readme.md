@@ -25,7 +25,11 @@ Express-knex is async, so you need to modify Express app use async initializatio
 
 In **app.js**, steps to init Express app generated with ``express-generator``:
 
-1) setup view engine
+1) convert app constructor to async function
+2) add storage engine
+3) init storage engine
+4) init routes
+
 
 
     
