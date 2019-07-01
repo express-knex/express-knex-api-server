@@ -1,8 +1,8 @@
-## Express Knex Server
+## Express Knex API Server
 
 ## Short overview
 
-Express Knex Server adds to Express-based server apps:
+Develop API server with Express and Knex:
 
   * user system: 
     * password/JWT auth, 
