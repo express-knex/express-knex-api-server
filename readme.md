@@ -30,6 +30,14 @@ In **app.js**, steps to init Express app generated with ``express-generator``:
 3) init storage engine
 4) init routes
 
+## App init steps:
+
+* (+) add wrap
+* (+) add mailer
+* configure models
+* configure auth
+* configure routes
+
 
 
     

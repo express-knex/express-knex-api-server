@@ -1,12 +1,72 @@
 {
-  "name": "express-knex-server",
+  "name": "express-knex-api-server",
   "version": "0.0.1",
-  "description": "Server plug-in to enable Knex-based CRUD routes, auth and more",
-  "main": "source/index.js",
+  "description": "Express Knex project, main server package",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf lib",
+    "test": "npm run lint && npm run cover",
+    "test:prod": "cross-env BABEL_ENV=production npm run test",
+    "test:only": "mocha ./test/**/*.js",
+    "test:watch": "npm test -- --watch",
+    "test:examples": "node examples/",
+    "cover": "nyc npm run test:only",
+    "lint": "eslint src test",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "_prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "release": "release-it"
   },
-  "keywords": [],
-  "author": "deksden",
-  "license": "MIT"
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/express-knex/express-knex-storage-sqlite.git"
+  },
+  "keywords": [
+    "Express",
+    "Knex",
+    "storage",
+    "SQLite",
+    "SQLite3",
+    "addon"
+  ],
+  "author": "",
+  "license": "ISC",
+  "release-it": {
+    "hooks": {
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    },
+    "github": {
+      "release": true
+    }
+  },
+  "dependencies": {
+    "express-knex-mailer": "^0.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/register": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.0",
+    "babel-preset-minify": "^0.5.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-eslint": "^10.0.2",
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-node": "^9.1.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "rimraf": "^2.6.3",
+    "release-it": "^12.3.0"
+  }
 }
