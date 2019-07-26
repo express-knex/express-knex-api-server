@@ -43,7 +43,8 @@
     }
   },
   "dependencies": {
-    "express-knex-mailer": "^0.0.3"
+    "express-knex-mailer": "^0.0.3",
+    "express-knex-wrap": "^0.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
